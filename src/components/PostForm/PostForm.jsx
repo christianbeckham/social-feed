@@ -11,8 +11,12 @@ const PostForm = (props) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		props.addPost(inputs);
-		setInputs({});
+		if (Object.keys(inputs).length > 0) {
+			if (inputs.username.trim() && inputs.postMessage.trim()) {
+				props.addPost(inputs);
+				setInputs({});
+			}
+		}
 	};
 
 	return (
