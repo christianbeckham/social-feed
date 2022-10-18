@@ -3,7 +3,6 @@ import PostActions from "../PostActions/PostActions";
 
 const Post = (props) => {
 	const {
-		post,
 		post: { username, postMessage },
 	} = props;
 
@@ -11,7 +10,7 @@ const Post = (props) => {
 		<li>
 			<div>{username}</div>
 			<p>{postMessage}</p>
-			<PostActions post={post} />
+			<PostActions />
 		</li>
 	);
 };

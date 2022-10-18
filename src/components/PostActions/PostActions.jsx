@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PostButton from "../PostButton/PostButton";
 
-const PostActions = (props) => {
+const PostActions = () => {
 	const [buttonColors, setButtonColors] = useState({
 		likedColor: "gray",
 		dislikedColor: "gray",
