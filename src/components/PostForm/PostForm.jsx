@@ -6,14 +6,13 @@ const PostForm = (props) => {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
-
 		setInputs((prevState) => ({ ...prevState, [name]: value }));
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.addPost(inputs);
+		setInputs({});
 	};
 
 	return (
