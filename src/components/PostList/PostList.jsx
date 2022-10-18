@@ -1,14 +1,13 @@
 import React from "react";
+import Post from "../Post/Post";
 
 const PostList = (props) => {
+	const { posts } = props;
 	return (
 		<div>
 			<ul>
-				{props.posts.map((post, index) => (
-					<li key={index}>
-						<div>Username: {post.username}</div>
-						<p>Message: {post.postMessage}</p>
-					</li>
+				{posts.map((post, index) => (
+					<Post key={index} post={post} />
 				))}
 			</ul>
 		</div>
