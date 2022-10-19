@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./styles/app.css"
 import NavBar from "./components/NavBar/NavBar";
 import PostForm from "./components/PostForm/PostForm";
 import PostList from "./components/PostList/PostList";
@@ -13,7 +12,7 @@ const App = () => {
 	};
 
 	return (
-		<div className="app">
+		<div>
 			<NavBar />
 			<div className="col-6 m-auto">
 				<PostForm addPost={addPost} />
