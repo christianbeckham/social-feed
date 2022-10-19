@@ -27,7 +27,7 @@ const PostForm = (props) => {
 	};
 
 	return (
-		<form className="border my-3 p-3 rounded-4 shadow" onSubmit={handleSubmit}>
+		<form className="bg-white border my-3 p-3 rounded-4 shadow" onSubmit={handleSubmit}>
 			<div className="row mb-3 align-items-center">
 				<div className="col-1">
 					<label className="form-label fw-semibold text-black-50">Name</label>
