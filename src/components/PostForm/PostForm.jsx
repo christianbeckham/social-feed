@@ -16,6 +16,7 @@ const PostForm = (props) => {
 			if (inputs.username.trim() && inputs.postMessage.trim()) {
 				const updatedInput = {
 					...inputs,
+					id: generateId(),
 					createdDate: new Date().toLocaleDateString(),
 					isLiked: null,
 				};
