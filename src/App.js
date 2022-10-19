@@ -5,6 +5,7 @@ import PostList from "./components/PostList/PostList";
 
 const App = () => {
 	const [posts, setPosts] = useState([]);
+	console.log("App", posts);
 
 	const addPost = (post) => {
 		setPosts((prevState) => [post, ...prevState]);
@@ -13,8 +14,10 @@ const App = () => {
 	return (
 		<div>
 			<NavBar />
-			<PostForm addPost={addPost} />
-			<PostList posts={posts}/>
+			<div className="col-6 m-auto">
+				<PostForm addPost={addPost} />
+				<PostList posts={posts} />
+			</div>
 		</div>
 	);
 };

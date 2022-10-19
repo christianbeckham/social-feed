@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import PostButton from "../PostButton/PostButton";
 
-const PostActions = () => {
-	const [buttonColors, setButtonColors] = useState({
-		likedColor: "gray",
-		dislikedColor: "gray",
-	});
+const PostActions = (props) => {
+	const initialColors = { likedColor: "lightgray", dislikedColor: "lightgray" };
+	const [colors, setColors] = useState(initialColors);
 
 	const handleLike = () => {
-		setButtonColors({ likedColor: "green", dislikedColor: "gray" });
+		setColors({ likedColor: "green", dislikedColor: "lightgray" });
+		props.post.isLiked = true;
 	};
+
 	const handleDislike = () => {
-		setButtonColors({ likedColor: "gray", dislikedColor: "red" });
+		setColors({ likedColor: "lightgray", dislikedColor: "red" });
+		props.post.isLiked = false;
 	};
 
 	return (
-		<div>
+		<div className="float-end">
 			<PostButton
 				iconName="hand-thumbs-up-fill"
-				color={buttonColors.likedColor}
+				color={colors.likedColor}
 				handleOnClick={handleLike}
 			/>
 			<PostButton
 				iconName="hand-thumbs-down-fill"
-				color={buttonColors.dislikedColor}
+				color={colors.dislikedColor}
 				handleOnClick={handleDislike}
 			/>
 		</div>
