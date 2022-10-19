@@ -27,12 +27,15 @@ const PostForm = (props) => {
 	};
 
 	return (
-		<form className="bg-white border my-3 p-3 rounded-4 shadow" onSubmit={handleSubmit}>
+		<form
+			className="bg-white border my-3 p-3 rounded-4 shadow"
+			onSubmit={handleSubmit}
+		>
 			<div className="row mb-3 align-items-center">
-				<div className="col-1">
+				<div className="col-sm-auto col-md-2 col-lg-2 col-xl-1">
 					<label className="form-label fw-semibold text-black-50">Name</label>
 				</div>
-				<div className="col-9">
+				<div className="col-sm-auto col-lg-9">
 					<input
 						className="form-control"
 						type="text"
@@ -43,10 +46,10 @@ const PostForm = (props) => {
 				</div>
 			</div>
 			<div className="row">
-				<div className="col-1">
+				<div className="col-sm-auto col-md-2 col-lg-2 col-xl-1">
 					<label className="form-label fw-semibold text-black-50">Post</label>
 				</div>
-				<div className="col-9">
+				<div className="col-sm-auto col-lg-9">
 					<textarea
 						className="form-control"
 						name="postMessage"
