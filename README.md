@@ -9,5 +9,6 @@ The goal of the Social Feed project is to become more familiar with the main con
 - [NodeJS](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [Bootstrap](https://react-bootstrap.github.io)
+- [Bootstrap Icons](https://icons.getbootstrap.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
