@@ -1,31 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import PostButton from "../PostButton/PostButton";
 
 const PostActions = (props) => {
-	const initialColors = { likedColor: "lightgray", dislikedColor: "lightgray" };
-	const [colors, setColors] = useState(initialColors);
+	const { post, toggleEditMode, updatePost } = props;
 
 	const handleLike = () => {
-		setColors({ likedColor: "green", dislikedColor: "lightgray" });
-		props.post.isLiked = true;
+		post.isLiked
+			? updatePost(post.id, { isLiked: null })
+			: updatePost(post.id, { isLiked: true });
 	};
 
 	const handleDislike = () => {
-		setColors({ likedColor: "lightgray", dislikedColor: "red" });
-		props.post.isLiked = false;
+		post.isLiked === false
+			? updatePost(post.id, { isLiked: null })
+			: updatePost(post.id, { isLiked: false });
 	};
 
 	return (
 		<div className="float-end">
 			<PostButton
 				iconName="hand-thumbs-up-fill"
-				color={colors.likedColor}
+				color={post.isLiked ? "green" : "lightgray"}
 				handleOnClick={handleLike}
 			/>
 			<PostButton
 				iconName="hand-thumbs-down-fill"
-				color={colors.dislikedColor}
+				color={post.isLiked === false ? "red" : "lightgray"}
 				handleOnClick={handleDislike}
+			/>
+			<PostButton
+				iconName="pencil-square"
+				color={"lightgray"}
+				handleOnClick={toggleEditMode}
 			/>
 		</div>
 	);
