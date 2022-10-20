@@ -5,10 +5,19 @@ import PostList from "./components/PostList/PostList";
 
 const App = () => {
 	const [posts, setPosts] = useState([]);
-	console.log("App", posts);
 
 	const addPost = (post) => {
 		setPosts((prevState) => [post, ...prevState]);
+	};
+
+	const updatePost = (postId, values) => {
+		const newUpdatedPosts = posts.map((post) => {
+			if (post.id === postId) {
+				return { ...post, ...values };
+			}
+			return post;
+		});
+		setPosts(newUpdatedPosts);
 	};
 
 	return (
@@ -16,7 +25,7 @@ const App = () => {
 			<NavBar />
 			<div className="col-6 m-auto">
 				<PostForm addPost={addPost} />
-				<PostList posts={posts} />
+				<PostList posts={posts} updatePost={updatePost} />
 			</div>
 		</div>
 	);
